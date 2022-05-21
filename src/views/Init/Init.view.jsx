@@ -1,6 +1,17 @@
+import { useEffect } from 'react'
+// [*] redux
+import { useSelector, useDispatch } from 'react-redux'
+import { setItem } from '../../reducers/cart.reducer'
+
 import './init.style.scss'
 
 const Init = () => {
+  const cart = useSelector(state => state.cart.data)
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+  }, [])
+
   // * return
   return (
     <section className='init view'>
