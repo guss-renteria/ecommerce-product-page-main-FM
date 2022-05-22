@@ -5,6 +5,8 @@ import { setItem } from '../../reducers/cart.reducer'
 
 import './init.style.scss'
 
+import Header from '../../components/Header/Header.component'
+
 const Init = () => {
   const cart = useSelector(state => state.cart.data)
   const dispatch = useDispatch()
@@ -15,12 +17,7 @@ const Init = () => {
   // * return
   return (
     <section className='init view'>
-      Collections
-      Men
-      Women
-      About
-      Contact
-
+      <Header />
       Sneaker Company
 
       Fall Limited Edition Sneakers

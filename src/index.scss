@@ -1,8 +1,18 @@
+$orange: hsl(26, 100%, 55%);
+$pale_orange: hsl(25, 100%, 94%);
+$very_vark_blue: hsl(220, 13%, 13%);
+$dark_grayish_blue: hsl(219, 9%, 45%);
+$grayish_blue: hsl(220, 14%, 75%);
+$light_grayish_blue: hsl(223, 64%, 98%);
+$white: hsl(0, 0%, 100%);
+$black: hsl(0, 0%, 0%); // (with 75% opacity for lightbox background)
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 
+  font-family: 'Kumbh Sans', sans-serif;
   -webkit-tap-highlight-color: transparent;
 }
 html {
@@ -12,6 +22,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
 body {
+  background: $white;
 }
 
 .footer {
