@@ -1,0 +1,106 @@
+$black: hsl(0, 0%, 0%); // (with 75% opacity for lightbox background)
+$orange: hsl(26, 100%, 55%);
+
+$very_dark_blue: hsl(220, 13%, 13%);
+$dark_grayish_blue: hsl(219, 9%, 45%);
+$grayish_blue: hsl(220, 14%, 75%);
+$grayish_blue_border: hsl(220deg 14% 75% / 75%);
+// @media screen and (min-width: 768px)
+@media screen and (min-width: 900px) {
+  div.header {
+    border-bottom: .1rem solid $grayish_blue_border;
+
+    div.header__container {
+      img.menu {
+        display: none;
+      }
+      div.cart {
+        img.cart {
+          margin-right: 3.2rem;
+          filter: none;
+          transition: .2s ease;
+
+          &:hover {
+            filter: hue-rotate(60deg) brightness(0%);
+          }
+        }
+      }
+      img.profile {
+        width: 5.4rem;
+        height: 5.4rem;
+      }
+    }
+    div.header__nav {
+      width: auto;
+      height: 6rem;
+      padding-left: 5rem;
+
+      flex: 1;
+      position: relative;
+      background: transparent;
+
+      nav {
+        width: auto;
+        min-height: 100%;
+        overflow: visible;
+        padding-top: 0;
+
+        flex: 1;
+        display: flex;
+        align-items: center;
+        position: relative;
+        left: 0;
+        transition: none;
+
+        & > div {
+          height: 100%;
+          margin-right: 3.2rem;
+          padding: .5rem 0;
+          display: flex;
+          align-items: center;
+
+          color: $dark_grayish_blue;
+          font-size: 1.6rem;
+          font-weight: 400;
+
+          position: relative;
+          transition: .2s ease;
+
+          &:before {
+            content: '';
+            width: 100%;
+            height: .4rem;
+            opacity: 0;
+
+            background: $orange;
+
+            position: absolute;
+            left: 0;
+            bottom: -2rem;
+
+            transition: .2s ease;
+          }
+
+          &:hover {
+            color: $very_dark_blue;
+
+            &::before {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+    &.active {
+      .header__container {
+        img.menu {
+          transform: rotate(0);
+        }
+      }
+      div.header__nav {
+        width: 100%;
+        background: transparent;
+      }
+    }
+  }
+}

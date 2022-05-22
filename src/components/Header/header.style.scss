@@ -1,6 +1,10 @@
 $white: hsl(0, 0%, 100%);
+$black: hsl(0, 0%, 0%); // (with 75% opacity for lightbox background)
+$orange: hsl(26, 100%, 55%);
+$dark_grayish_blue: hsl(219, 9%, 45%);
+$very_dark_blue: hsl(220, 13%, 13%);
 
-.header {
+div.header {
   width: 100%;
   min-height: 6rem;
   padding: 2rem;
@@ -42,14 +46,25 @@ $white: hsl(0, 0%, 100%);
     img.cart {
       width: 3.4rem;
       height: 3.4rem;
+      cursor: pointer;
 
       margin-right: 1.6rem;
       padding: .5rem;
+
+      filter: hue-rotate(60deg) brightness(0%);
     }
     img.profile {
       width: 3.4rem;
       height: 3.4rem;
-      padding: .5rem;
+      cursor: pointer;
+      border: .2rem solid transparent;
+      border-radius: 100%;
+
+      transition: .2s ease;
+
+      &:hover {
+        border: .2rem solid $orange;
+      }
     }
   }
   div.header__nav {
@@ -80,6 +95,7 @@ $white: hsl(0, 0%, 100%);
         padding: 1.6rem 2.8rem;
         cursor: pointer;
 
+        color: $very_dark_blue;
         font-size: 1.8rem;
         font-weight: 700;
       }

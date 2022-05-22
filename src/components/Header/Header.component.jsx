@@ -1,5 +1,7 @@
 import {useRef} from 'react'
+
 import './header.style.scss'
+import './header.style_md.scss'
 
 import logo from '../../images/logo.svg'
 import icon_cart from '../../images/icon-cart.svg'
@@ -13,7 +15,7 @@ const Header = () => {
   const handleMenu = () => {
     const icon_menu_elem = header_ref.current.querySelector('img.menu')
     
-    if(header_ref.current.classList.toggle('active')) {
+    if(window.innerWidth < 875 && header_ref.current.classList.toggle('active')) {
       icon_menu_elem.src = icon_close
     }else {
       icon_menu_elem.src = icon_menu
@@ -43,7 +45,9 @@ const Header = () => {
         </nav>
       </div>
       <div className='header__container'>
-        <img className='cart' src={ icon_cart } alt='cart'></img>
+        <div className='cart'>
+          <img className='cart' src={ icon_cart } alt='cart'></img>
+        </div>
         <img className='profile' src={ image_avatar } alt='profile'></img>
       </div>
     </div>
