@@ -76,7 +76,7 @@ const Sneaker = () => {
           <div className='imgs-thumbnail'>
             { sneaker?.thumbnails && sneaker.thumbnails.map((image, key) => {
               if(key == 0)
-                return <div className='div-thumbnail' key={ key } onClick={ () => {setPosImgs(key)}}><img className='thumbnail active' src={ image } alt='image'/></div>
+                return <div className='div-thumbnail active' key={ key } onClick={ () => {setPosImgs(key)}}><img className='thumbnail' src={ image } alt='image'/></div>
               else
                 return <div className='div-thumbnail' key={ key } onClick={ () => {setPosImgs(key)}}><img className='thumbnail' src={ image } alt='image'/></div>
             })}

@@ -25,6 +25,9 @@ $grayish_blue_border: hsl(220deg 14% 75% / 75%);
             filter: hue-rotate(60deg) brightness(0%);
           }
         }
+        div.cart-count {
+          right: 2.4rem;
+        }
       }
       img.profile {
         width: 5.4rem;
@@ -39,6 +42,10 @@ $grayish_blue_border: hsl(220deg 14% 75% / 75%);
       flex: 1;
       position: relative;
       background: transparent;
+
+      img.menu.fixed {
+        display: none;
+      }
 
       nav {
         width: auto;
@@ -95,7 +102,6 @@ $grayish_blue_border: hsl(220deg 14% 75% / 75%);
     &.active {
       .header__container {
         img.menu {
-          transform: rotate(0);
         }
       }
       div.header__nav {
