@@ -22,6 +22,7 @@ const Sneaker = () => {
 
   useEffect(() => {
     const images = document.querySelectorAll('img.img')
+    const thumbnails = document.querySelectorAll('div.div-thumbnail')
 
     if(images?.length > 0) {
       //
@@ -35,10 +36,14 @@ const Sneaker = () => {
       //
 
       for(let i = 0; i < images.length; i++) {
-        if(i === pos_imgs)
+        if(i === pos_imgs) {
           images[i].classList.add('active')
-        else
+          thumbnails[i].classList.add('active')
+        }
+        else {
           images[i].classList.remove('active')
+          thumbnails[i].classList.remove('active')
+        }
       }
     }
 
@@ -47,10 +52,6 @@ const Sneaker = () => {
   const handleImage = dir => {
     const new_pos = pos_imgs + dir
     setPosImgs(new_pos)
-  }
-
-  const handleCounter = func => {
-    useDispatch(func(sneaker?.name))
   }
 
   // * return
@@ -73,6 +74,12 @@ const Sneaker = () => {
             </button>
           </div>
           <div className='imgs-thumbnail'>
+            { sneaker?.thumbnails && sneaker.thumbnails.map((image, key) => {
+              if(key == 0)
+                return <div className='div-thumbnail' key={ key } onClick={ () => {setPosImgs(key)}}><img className='thumbnail active' src={ image } alt='image'/></div>
+              else
+                return <div className='div-thumbnail' key={ key } onClick={ () => {setPosImgs(key)}}><img className='thumbnail' src={ image } alt='image'/></div>
+            })}
           </div>
         </div>
         <div className='sneaker-part'>

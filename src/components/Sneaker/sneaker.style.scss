@@ -84,7 +84,7 @@ div.sneaker.component {
         }
       }
       div.imgs-thumbnail {
-        display: hidden;
+        display: none;
       }
     }
 
@@ -109,7 +109,6 @@ div.sneaker.component {
         color: $dark_grayish_blue;
         font-size: 1.4rem;
         line-height: 2.2rem;
-        letter-spacing: .1rem;
       }
       div.price-container {
         margin-bottom: 2.4rem;
@@ -170,6 +169,7 @@ div.sneaker.component {
 
             &:hover {
               transform: scale(1.15);
+              opacity: .5;
             }
           }
 
@@ -209,7 +209,7 @@ div.sneaker.component {
           }
 
           &:hover {
-            opacity: .8;
+            opacity: .5;
           }
         }
       }
