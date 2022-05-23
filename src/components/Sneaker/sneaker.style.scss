@@ -1,0 +1,218 @@
+$white: hsl(0, 0%, 100%);
+$orange: hsl(26, 100%, 55%);
+$pale_orange: hsl(25, 100%, 94%);
+$grayish_blue: hsl(220, 14%, 75%);
+$dark_grayish_blue: hsl(219, 9%, 45%);
+$light_grayish_blue: hsl(223, 64%, 98%);
+
+div.sneaker.component {
+  width: min(100%, 48rem);
+  margin: 0 auto;
+
+  div.sneaker-container {
+    display: flex;
+    flex-wrap: wrap;
+
+    div.sneaker-part {
+      width: 100%;
+    }
+
+    div.sneaker-part:nth-child(1) {
+      div.imgs-container {
+        width: 100%;
+        height: 32rem;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+
+        position: relative;
+
+        & > img {
+          width: 100%;
+          height: 100%;
+          opacity: 0;
+
+          display: flex;
+          object-fit: cover;
+
+          position: absolute;
+          top: 0;
+          left: 0;
+
+          transition: .5s ease;
+
+          &.active {
+            opacity: 1;
+          }
+
+          &:nth-child(1) {
+            position: relative;
+          }
+        }
+
+        button {
+          width: 5rem;
+          height: 5rem;
+
+          position: absolute;
+          background: $white;
+          border-radius: 100%;
+          border: none;
+          cursor: pointer;
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          transition: .2s ease;
+
+          img {
+            width: 1.2rem;
+            height: 1.8rem;
+          }
+
+          &:hover {
+            opacity: .9;
+            transform: scale(.95);
+          }
+        }
+        button.prev {
+          left: 2rem;
+        }
+        button.next {
+          right: 2rem;
+        }
+      }
+      div.imgs-thumbnail {
+        display: hidden;
+      }
+    }
+
+    div.sneaker-part:nth-child(2) {
+      padding: 3.2rem;
+
+      h3 {
+        margin-bottom: 1.6rem;
+
+        color: $orange;
+        font-size: 1.28rem;
+        text-transform: uppercase;
+        letter-spacing: .2rem;
+      }
+      h2 {
+        margin-bottom: 1.6rem;
+        font-size: 2.8rem;
+      }
+      & > p {
+        margin-bottom: 2.4rem;
+
+        color: $dark_grayish_blue;
+        font-size: 1.4rem;
+        line-height: 2.2rem;
+        letter-spacing: .1rem;
+      }
+      div.price-container {
+        margin-bottom: 2.4rem;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+
+        div.price {
+          font-size: 2.8rem;
+          font-weight: 700;
+        }
+        div.discount {
+          flex: 1;
+          display: flex;
+          align-items: center;
+          
+          span {
+            padding: .3rem .8rem;
+            margin-left: 1.6rem;
+            background: $pale_orange;
+            border-radius: .4rem;
+
+            color: $orange;
+            font-weight: 700;
+            font-size: 1.6rem;
+          }
+        }
+        div.old-price {
+          color: $grayish_blue;
+          font-size: 1.6rem;
+          font-weight: 700;
+          text-decoration: line-through;
+        }
+      }
+      div.cart-section {
+        display: flex;
+        flex-wrap: wrap;
+
+
+        div.cart-counter {
+          width: 100%;
+          margin-bottom: 1.8rem;
+          padding: 1.8rem 3.2rem;
+          background: $light_grayish_blue;
+          border-radius: 1.6rem;
+
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          button {
+            padding: .5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+
+            transition: .2s ease;
+
+            &:hover {
+              transform: scale(1.15);
+            }
+          }
+
+          button.del {
+          }
+          p {
+            font-size: 1.6rem;
+            font-weight: 700;
+          }
+          button.add {
+          }
+        }
+
+        button.add-to-cart {
+          width: 100%;
+          padding: 1.8rem 0;
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          background: $orange;
+          border: none;
+          border-radius: 1.2rem;
+          cursor: pointer;
+
+          color: $white;
+          font-size: 1.6rem;
+          font-weight: 700;
+
+          transition: .2s ease;
+
+          img {
+            margin-right: 1.2rem;
+            transform: scale(.8);
+            filter: hue-rotate(60deg) brightness(500%);
+          }
+
+          &:hover {
+            opacity: .8;
+          }
+        }
+      }
+    }
+  }
+}

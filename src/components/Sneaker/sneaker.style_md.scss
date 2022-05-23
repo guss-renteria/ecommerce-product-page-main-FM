@@ -1,0 +1,93 @@
+@media screen and (min-width: 900px) {
+  div.sneaker.component {
+    width: 100%;
+
+    div.sneaker-container {
+      div.sneaker-part {
+        width: 50%;
+      }
+      div.sneaker-part:nth-child(1) {
+        padding: 4%;
+
+        div.imgs-container {
+          height: auto;
+
+          & > img {
+            &.active {
+            }
+
+            &:nth-child(1) {
+            }
+          }
+
+          button {
+            img {
+            }
+
+            &:hover {
+            }
+          }
+
+          button.prev {
+          }
+
+          button.next {
+          }
+        }
+
+        div.imgs-thumbnail {
+        }
+      }
+
+      div.sneaker-part:nth-child(2) {
+        padding: 4%;
+        h3 {
+        }
+
+        h2 {
+        }
+
+        & > p {
+        }
+
+        div.price-container {
+          div.price {
+          }
+
+          div.discount {
+            span {
+            }
+          }
+
+          div.old-price {
+          }
+        }
+        div.cart-section {
+          div.cart-counter {
+            button {
+              &:hover {
+              }
+            }
+
+            button.del {
+            }
+
+            p {
+            }
+
+            button.add {
+            }
+          }
+
+          button.add-to-cart {
+            img {
+            }
+
+            &:hover {
+            }
+          }
+        }
+      }
+    }
+  }
+}

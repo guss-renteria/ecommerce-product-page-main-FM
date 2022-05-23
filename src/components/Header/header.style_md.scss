@@ -8,6 +8,7 @@ $grayish_blue_border: hsl(220deg 14% 75% / 75%);
 // @media screen and (min-width: 768px)
 @media screen and (min-width: 900px) {
   div.header {
+    padding: 2.8rem;
     border-bottom: .1rem solid $grayish_blue_border;
 
     div.header__container {
@@ -76,7 +77,7 @@ $grayish_blue_border: hsl(220deg 14% 75% / 75%);
 
             position: absolute;
             left: 0;
-            bottom: -2rem;
+            bottom: -2.8rem;
 
             transition: .2s ease;
           }
