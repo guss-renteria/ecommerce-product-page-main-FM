@@ -31,8 +31,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Frontend Mentor]()
-- Live Site URL: [Vercel]()
+- Solution URL: [Frontend Mentor](https://www.frontendmentor.io/solutions/responsive-ecommerce-product-with-react-redux-sass-vite-O4Hbh6Ywq4)
+- Live Site URL: [Vercel](https://ecommerce-product-page-main-fm.vercel.app/)
 
 ## My process
 
