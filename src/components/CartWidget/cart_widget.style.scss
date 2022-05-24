@@ -1,0 +1,116 @@
+$orange: hsl(26, 100%, 55%);
+$grayish_blue: hsl(220, 14%, 75%);
+$dark_grayish_blue: hsl(219, 9%, 45%);
+
+div.cart-widget {
+  margin-top: 1.2rem;
+  width: min(95%, 40rem);
+  overflow: hidden;
+
+  position: absolute;
+  right: -100%;
+  top: 100%;
+
+  background: white;
+  border-radius: 1rem;
+  transition: .2s ease;
+  box-shadow: 0 2rem 2.8rem #0000002f;
+
+  &.active {
+    right: 2.5%;
+  }
+
+  div.cart-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    & > * {
+      width: 100%;
+      padding: 2.8rem;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+
+      border-bottom: .1rem solid $grayish_blue;
+    }
+
+    div.object-in-cart {
+      display: flex;
+      align-items: center;
+
+      img[alt='image'] {
+        width: 5.4rem;
+        border-radius: .6rem;
+      }
+      img[alt='trash'] {
+        padding: .5rem;
+        cursor: pointer;
+
+        transition: .2s ease;
+
+        &:hover {
+          opacity: .6;
+        }
+      }
+
+      div.object-info {
+        flex: 1;
+        padding-left: 1.6rem;
+        overflow: hidden;
+
+        h3 {
+          margin-bottom: .8rem;
+
+          color: $dark_grayish_blue;
+          font-size: 1.6rem;
+          font-weight: 400;
+        }
+
+        p.price {
+          color: $dark_grayish_blue;
+          font-size: 1.6rem;
+
+          b {
+            margin-left: 1rem;
+          }
+        }
+      }
+    }
+
+    p.empty {
+      min-height: 18rem;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      color: $dark_grayish_blue;
+      font-size: 1.6rem;
+      font-weight: 700;
+    }
+
+    button.checkout {
+      width: 100%;
+      padding: 2rem;
+      margin-top: 2.8rem;
+
+      background: $orange;
+      border: none;
+      border-radius: 1rem;
+      cursor: pointer;
+
+      color: white;
+      font-size: 1.6rem;
+      font-weight: 700;
+
+      transition: .2s ease;
+
+      &:hover {
+        opacity: .6;
+      }
+    }
+  }
+}

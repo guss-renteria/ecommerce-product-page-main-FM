@@ -101,7 +101,7 @@ const Sneaker = () => {
                 <img src={ icon_plus } alt='icon-add'/>
               </button>
             </div>
-            <button className='add-to-cart' onClick={() => { dispatch(addItem({code: 'f-snk', data: cart_counter})); setCartCounter(0)} }><img src={ icon_cart } alt='icon-add-to-cart'></img>Add to cart</button>
+            <button className='add-to-cart' onClick={() => { dispatch(addItem({code: 'f-snk', count: cart_counter})); setCartCounter(0)} }><img src={ icon_cart } alt='icon-add-to-cart'></img>Add to cart</button>
           </div>
         </div>
       </div>

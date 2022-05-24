@@ -16,12 +16,12 @@ const Header = () => {
   const cart = useSelector(state => state.cart.data)
   const products = useSelector(state => state.products.data)
   const header_ref = useRef()
-  const [items_in_cart, setItemsInCart] = useState(0)
+  const [widget_state, setWidgetState] = useState(false)
 
   const getItemsInCart = () => {
     let sum = 0;
     Object.values(cart).forEach(value => {
-      sum += value.data
+      sum += value.count
     })
 
     return sum
@@ -61,7 +61,7 @@ const Header = () => {
         </nav>
       </div>
       <div className='header__container'>
-        <div className='cart'>
+        <div className='cart' onClick={ () => setWidgetState(!widget_state) }>
           <img className='cart' src={ icon_cart } alt='cart'></img>
           { getItemsInCart() > 0 && (
             <div className='cart-count'>{ getItemsInCart() }</div>
@@ -69,7 +69,7 @@ const Header = () => {
         </div>
         <img className='profile' src={ image_avatar } alt='profile'></img>
       </div>
-      <CartWidget cart={ cart } />
+      <CartWidget widget_state={ widget_state } cart={ cart } products={ products } />
     </div>
   )
 }
