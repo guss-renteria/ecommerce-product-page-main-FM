@@ -5,6 +5,8 @@ import { addItem } from '../../reducers/cart.reducer'
 import './sneaker.style.scss'
 import './sneaker.style_md.scss'
 
+import SneakerModal from '../SneakerModal/SneakerModal.component'
+
 import icon_prev from '../../images/icon-previous.svg'
 import icon_next from '../../images/icon-next.svg'
 import icon_minus from '../../images/icon-minus.svg'
@@ -13,12 +15,20 @@ import icon_cart from '../../images/icon-cart.svg'
 
 const Sneaker = () => {
   const sneaker = useSelector(state => state.products.data)[0]
-  const cart = useSelector(state => state.cart.data)
   const dispatch = useDispatch()
 
   const imgs_container = useRef()
   const [pos_imgs, setPosImgs] = useState(0)
   const [cart_counter, setCartCounter] = useState(0)
+  const [modal_state, setModalState] = useState(false)
+
+  useEffect(() => {
+    if(imgs_container.current)
+      imgs_container.current.onclick = () => {
+        if(window.innerWidth >= 900)
+          setModalState(true)
+      }
+  }, [imgs_container])
 
   useEffect(() => {
     const images = document.querySelectorAll('img.img')
@@ -57,6 +67,7 @@ const Sneaker = () => {
   // * return
   return (
     <div className='sneaker component'>
+      <SneakerModal sneaker={ sneaker } modal_states={ [modal_state, setModalState] }/>
       <div className='sneaker-container'>
         <div className='sneaker-part'>
           <div className='imgs-container' ref={ imgs_container }>

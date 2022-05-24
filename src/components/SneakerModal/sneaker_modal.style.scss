@@ -1,0 +1,159 @@
+$orange: hsl(26, 100%, 55%);
+
+div.sneaker-modal {
+  display: none;
+}
+
+@media screen and (min-width: 900px){
+  div.sneaker-modal {
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0, .75);
+
+    &.active {
+      display: flex;
+    }
+
+    div.modal-container {
+      width: 54rem;
+
+      div.images-modal {
+        position: relative;
+
+        display: flex;
+        align-items: center;
+
+        & > img {
+          width: 100%;
+          height: 100%;
+          opacity: 0;
+          
+          position: absolute;
+          border-radius: 1.6rem;
+
+          top: 0;
+          left: 0;
+          object-fit: cover;
+
+          transition: .2s ease;
+
+          &:nth-child(1) {
+            position: relative;
+          }
+
+          &.active {
+            opacity: 1;
+          }
+        }
+        button {
+          position: absolute;
+          background: none;
+          border: none;
+        }
+
+        button.prev,
+        button.next {
+          width: 5.6rem;
+          height: 5.6rem;
+
+          background: white;
+          border-radius: 100%;
+          cursor: pointer;
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          img {
+            transition: .2s ease;
+          }
+          
+          &:hover {
+            img {
+              filter: contrast(30%) sepia(1) hue-rotate(10deg) saturate(1000%);
+            }
+          }
+        }
+        button.prev {
+          left: -2.8rem;
+        }
+        button.next {
+          right: -2.8rem;
+        }
+        button.exit {
+          top: -6rem;
+          right: -.8rem;
+
+          img {
+            padding: .8rem;
+            width: 3.6em;
+
+            transition: .2s ease;
+            cursor: pointer;
+            filter: brightness(500%);
+
+            &:hover {
+              transform: scale(1.15);
+              filter: brightness(100%);
+            }
+          }
+        }
+      }
+
+      div.thumbnails-modal {
+        margin-top: 3rem;
+        padding: 0 3.2rem;
+        position: relative;
+
+        display: flex;
+        justify-content: space-around;
+
+        div.thumbnail {
+          width: calc(25% - 3rem);
+
+          position: relative;
+          object-fit: cover;
+
+          img {
+            width: 100%;
+            height: 100%;
+            border-radius: 1rem;
+          }
+
+          div.select {
+            width: 100%;
+            height: 100%;
+            border-radius: 1rem;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            cursor: pointer;
+            transition: .2s ease;
+          }
+
+          &.active {
+            div.select {
+              background: rgba(255, 255, 255, 0.8);
+              outline: .2rem solid $orange;
+            }
+          }
+          &:hover {
+            div.select {
+              background: rgba(255, 255, 255, 0.6);
+            }
+          }
+        }
+      }
+    }
+  }
+}
